@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Social Media Account Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9ec4, #a18cd1);
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 40px 35px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 480px;
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+
+    .profile-card h2 {
+      color: #ff5fa2;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    .form-control, .form-select {
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      background-color: #f8f8ff;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 10px #ff8fc7;
+      border: 1px solid #ff8fc7;
+    }
+
+    .btn-anime {
+      background-color: #ff6fae;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      padding: 10px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .btn-anime:hover {
+      background-color: #ff4f96;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    }
+
+    label {
+      font-weight: 500;
+      color: #444;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 8px;
+    }
+
+    .anime-icon {
+      display: block;
+      margin: 0 auto 10px;
+      width: 70px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="profile-card">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" class="anime-icon" alt="Anime Icon">
+    <h2>Social Media Account</h2>
+
+    <form action="/profile" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label">Profile Picture</label>
+        <input type="file" class="form-control" name="avatar" accept="image/*">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Firstname</label>
+        <input type="text" class="form-control" name="firstname" placeholder="Your first name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Lastname</label>
+        <input type="text" class="form-control" name="lastname" placeholder="Your last name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Your anime username" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="example@gmail.com" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Sex</label>
+        <div class="radio-group">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" value="Male" id="male">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" value="Female" id="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input type="text" class="form-control" name="status" placeholder="Single, Taken, etc.">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-control" name="location" placeholder="Your hometown">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Favorite Anime</label>
+        <input type="text" class="form-control" name="favorite_anime" placeholder="e.g. One Piece, Demon Slayer">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Favorite Character</label>
+        <input type="text" class="form-control" name="favorite_character" placeholder="e.g. Naruto Uzumaki">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Short Bio</label>
+        <textarea class="form-control" name="bio" rows="3" placeholder="Tell us something about your otaku life..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-anime">Create Account</button>
+    </form>
+  </div>
+</body>
+</html>
